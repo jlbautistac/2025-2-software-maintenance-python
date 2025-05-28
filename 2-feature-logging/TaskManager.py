@@ -39,10 +39,15 @@ class TaskManager:
             logging.info(f"Saved {len(self.tasks)} tasks to {self.file_name}")
         except Exception as e:
             logging.error(f"Error saving task data to {self.file_name}: {str(e)}")
+
+    def get_next_id(self):
+        if not self.tasks:
+            return 1
+        return max(task["id"] for task in self.tasks) + 1
     
     def add_task(self, title, description):
         task = {
-            "id": len(self.tasks) + 1,
+            "id": self.get_next_id(),
             "title": title,
             "description": description,
             "status": "Pending",
