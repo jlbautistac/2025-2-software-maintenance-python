@@ -1,10 +1,10 @@
+import logging
+import db.init_db as init_db
 from app.config import load_environment
 from db.connection import DatabaseConnectionError
 from repositories.TaskRepository import TaskRepository
 from services.TaskService import TaskService
 from ui.TaskUI import TaskUI
-import logging
-import db.init_db as init_db
 
 
 def main():

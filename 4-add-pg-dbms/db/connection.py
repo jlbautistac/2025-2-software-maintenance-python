@@ -1,8 +1,8 @@
 import os
-from dotenv import load_dotenv
 import logging
 import psycopg2
 from contextlib import contextmanager
+from dotenv import load_dotenv
 
 class TaskManagerException(Exception):
     """Custom exception for TaskManager operations"""
